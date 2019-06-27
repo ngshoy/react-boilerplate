@@ -1,7 +1,8 @@
 import React from 'react';
+import './styles.less';
 
 const App = () => (
-  <div>This app works!</div>
+  <h1>This app works!</h1>
 );
 
 export default App;

@@ -68,7 +68,7 @@ module.exports = env => {
     },
     devServer: {
       compress: true,
-      https: true,
+      https: false,
       hot: true,
       inline: true,
       open: true

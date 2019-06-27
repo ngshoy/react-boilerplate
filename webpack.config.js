@@ -42,9 +42,9 @@ module.exports = env => {
           loader: 'style-loader!css-loader'
         },
         {
-          test: /\.less$/,
+          test: /\.(scss|sass)$/,
           exclude: /node_modules/,
-          loader: 'style-loader!css-loader!less-loader'
+          loader: 'style-loader!css-loader!sass-loader'
         },
         {
           test: /\.woff$/,

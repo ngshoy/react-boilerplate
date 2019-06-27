@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.less';
+import './styles.scss';
 
 const App = () => (
   <h1>This app works!</h1>

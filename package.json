@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dashboard -- webpack-dev-server --config webpack.config.js --env.dev",
-    "build:prod": "webpack --config webpack.config.js --env.prod"
+    "build": "webpack --config webpack.config.js --env.prod",
+    "test": "jest --config jest.config.js"
   },
   "dependencies": {
     "react": "^16.8.6",
@@ -14,17 +15,24 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.4.5",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^3.0.0",
     "css-loader": "^3.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
     "express": "^4.17.1",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "style-loader": "^0.23.1",

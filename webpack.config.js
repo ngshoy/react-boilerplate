@@ -16,9 +16,7 @@ module.exports = env => {
 
   return {
     mode: env.prod ? 'production' : 'development',
-    entry: {
-      'app': './src/app.js'
-    },
+    entry: ['./src/app.js'],
     output: {
       filename: '[name].[hash].js',
       path: resolve(__dirname, './dist'),
@@ -30,13 +28,23 @@ module.exports = env => {
       rules: [{
           test: /\.js?$/,
           exclude: /(node_modules)/,
+          loader: 'babel-loader'
+        },
+        {
+          test: /\.html$/,
           use: [{
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'],
-              plugins: ['syntax-dynamic-import', '@babel/plugin-transform-runtime']
-            }
+            loader: "html-loader"
           }]
+        },
+        {
+          test: /\.css$/,
+          exclude: /node_modules/,
+          loader: 'style-loader!css-loader'
+        },
+        {
+          test: /\.less$/,
+          exclude: /node_modules/,
+          loader: 'style-loader!css-loader!less-loader'
         },
         {
           test: /\.woff$/,
@@ -53,16 +61,6 @@ module.exports = env => {
         {
           test: /\.svg$/,
           loader: 'url-loader?limit=0&mimetype=image/svg+xml'
-        },
-        {
-          test: /\.css$/,
-          exclude: /node_modules/,
-          loader: 'style-loader!css-loader'
-        },
-        {
-          test: /\.less$/,
-          exclude: /node_modules/,
-          loader: 'style-loader!css-loader!less-loader'
         }
       ]
     },

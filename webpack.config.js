@@ -86,11 +86,11 @@ module.exports = env => {
         debug: false,
         quiet: true
       })),
-      ifProd(new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: 'production'
-        }
-      })),
+      // ifProd(new webpack.DefinePlugin({
+      //   'process.env': {
+      //     NODE_ENV: 'production'
+      //   }
+      // })),
       ifProd(new CompressionPlugin({
         filename: '[path].gz[query]',
         test: /\.(js|css|html|svg)$/,
